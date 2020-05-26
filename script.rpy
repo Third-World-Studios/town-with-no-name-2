@@ -1,17 +1,32 @@
-﻿init python:
-    import common
+﻿#characters.
 
-# Calling scenes goes like this
+define j = Character("Jim", what_font="kremlin.ttf",color="FFE920")
+#character pictures
+image jim = "jim.png"
+
+#backgrounds
+
+image town = "town.png"
+image black = "black.jpg"
+image main_menu = Movie(channel="main_menu", play="retard.webm")
+
+
+
 label start:
-    call test_scene from _call_test_scene
-    # call another_scene from _call_another_scene
+    scene black
+    with Dissolve(3.0)
+    $ renpy.movie_cutscene("brutalbang.webm")
 
-    return
+    scene town
 
-label splashscreen:
 
-    play sound 'movie/splash.mp4'
-    show splash at top with dissolve
-    with Pause(11.0)
-    hide movie_cutscene with dissolve
+    show jim
+
+
+    j "Hello there fren"
+
+    j "How can help?"
+
+    j "Sorry for bad englis."
+
     return
